@@ -31,7 +31,7 @@ export class RelayApi implements ICredentialType {
 			default: '',
 			required: true,
 			description:
-				'A shop key (rb_live_… or rb_test_…, from Partners › Shop › Connect my website) or an agency key (relay_pk_…, from the Developers page of the agency dashboard). Sandbox keys (rb_sbx_…, relay_pk_sbx_…, from relaysandbox.didavie.com) always use the API sandbox.',
+				'A shop key (rb_live_…, from Partners › Shop › Connect my website) or an agency key (relay_pk_…, from the Developers page of the agency dashboard). Sandbox keys (rb_sbx_…, relay_pk_sbx_…, from relaysandbox.didavie.com) always use the API sandbox.',
 		},
 		{
 			displayName: 'Environment',
@@ -42,12 +42,12 @@ export class RelayApi implements ICredentialType {
 					name: 'Automatic (From the Key)',
 					value: 'auto',
 					description:
-						'Sandbox keys (rb_sbx_, relay_pk_sbx_) use relaysandbox.didavie.com; live and test keys use relaypartner.didavie.com',
+						'Sandbox keys (rb_sbx_, relay_pk_sbx_) use relaysandbox.didavie.com; live keys use relaypartner.didavie.com',
 				},
 				{
 					name: 'Production',
 					value: 'production',
-					description: 'https://relaypartner.didavie.com (live and test keys)',
+					description: 'https://relaypartner.didavie.com (live keys)',
 				},
 				{
 					name: 'API Sandbox',

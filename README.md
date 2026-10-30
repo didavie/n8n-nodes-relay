@@ -29,11 +29,11 @@ Create, track, list and cancel Relay deliveries, get a delivery price, and start
 - n8n 1.x, self-hosted (community nodes are installed by the instance owner or an admin).
 - A Relay API key. Either kind works:
 
-| Key         | Where to get it                                                                       | Prefix                                           |
-| ----------- | ------------------------------------------------------------------------------------- | ------------------------------------------------ |
-| Shop key    | Relay Partners > Shop > Connect my website                                            | `rb_live_` (live), `rb_test_` (test)             |
-| Agency key  | Agency dashboard > Developers                                                         | `relay_pk_live_` (live), `relay_pk_test_` (test) |
-| Sandbox key | [relaysandbox.didavie.com](https://relaysandbox.didavie.com), no Relay account needed | `rb_sbx_` (shop), `relay_pk_sbx_` (agency)       |
+| Key         | Where to get it                                                                       | Prefix                                     |
+| ----------- | ------------------------------------------------------------------------------------- | ------------------------------------------ |
+| Shop key    | Relay Partners > Shop > Connect my website                                            | `rb_live_`                                 |
+| Agency key  | Agency dashboard > Developers                                                         | `relay_pk_live_`                           |
+| Sandbox key | [relaysandbox.didavie.com](https://relaysandbox.didavie.com), no Relay account needed | `rb_sbx_` (shop), `relay_pk_sbx_` (agency) |
 
 The node reads the key prefix and sends the right request for each kind (order id field, address fields, idempotency header, cancel reason field, estimate points). Fields that a key kind does not accept are left out and listed in `ignored_fields` on the output.
 
@@ -65,7 +65,7 @@ Create a **Relay API** credential:
 
 - **API Key**: your shop, agency or sandbox key.
 - **Environment**:
-  - _Automatic_ (default): sandbox keys go to `https://relaysandbox.didavie.com/api/v1`; live and test keys go to `https://relaypartner.didavie.com/api/v1`. The production host sends test keys to the Relay test environment on its own.
+  - _Automatic_ (default): sandbox keys go to `https://relaysandbox.didavie.com/api/v1`; live keys go to `https://relaypartner.didavie.com/api/v1`.
   - _Production_ or _API Sandbox_: force one host. A sandbox key always uses the sandbox, whatever you choose.
   - _Custom URL_: only when Relay gives you another API address (full `https://` URL ending in `/api/v1`).
 

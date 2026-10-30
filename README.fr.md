@@ -14,11 +14,11 @@ Créez, suivez, listez et annulez des livraisons Relay, obtenez un prix de livra
 - n8n 1.x auto-hébergé (les nœuds communautaires sont installés par le propriétaire ou un administrateur de l'instance).
 - Une clé API Relay :
 
-| Clé          | Où la créer                                                                     | Préfixe                                            |
-| ------------ | ------------------------------------------------------------------------------- | -------------------------------------------------- |
-| Clé boutique | Relay Partenaires > Boutique > Connecter mon site                               | `rb_live_` (réelle), `rb_test_` (test)             |
-| Clé agence   | Tableau de bord agence > Développeurs                                           | `relay_pk_live_` (réelle), `relay_pk_test_` (test) |
-| Clé sandbox  | [relaysandbox.didavie.com](https://relaysandbox.didavie.com), sans compte Relay | `rb_sbx_` (boutique), `relay_pk_sbx_` (agence)     |
+| Clé          | Où la créer                                                                     | Préfixe                                        |
+| ------------ | ------------------------------------------------------------------------------- | ---------------------------------------------- |
+| Clé boutique | Relay Partenaires > Boutique > Connecter mon site                               | `rb_live_`                                     |
+| Clé agence   | Tableau de bord agence > Développeurs                                           | `relay_pk_live_`                               |
+| Clé sandbox  | [relaysandbox.didavie.com](https://relaysandbox.didavie.com), sans compte Relay | `rb_sbx_` (boutique), `relay_pk_sbx_` (agence) |
 
 Le nœud lit le préfixe de la clé et envoie la bonne requête pour chaque type. Les champs qu'un type de clé n'accepte pas sont retirés et listés dans `ignored_fields`.
 
@@ -37,7 +37,7 @@ npm install n8n-nodes-relay
 ## Identifiant « Relay API »
 
 - **API Key** : votre clé boutique, agence ou sandbox.
-- **Environment** : _Automatic_ (par défaut) envoie les clés sandbox vers `https://relaysandbox.didavie.com/api/v1`, et les clés réelles et de test vers `https://relaypartner.didavie.com/api/v1` (le serveur de production envoie lui-même les clés de test vers l'environnement de test de Relay). _Custom URL_ ne sert que si Relay vous donne une autre adresse.
+- **Environment** : _Automatic_ (par défaut) envoie les clés sandbox vers `https://relaysandbox.didavie.com/api/v1`, et les clés réelles vers `https://relaypartner.didavie.com/api/v1`. _Custom URL_ ne sert que si Relay vous donne une autre adresse.
 
 Le test de l'identifiant appelle `GET /api/v1/me`. Gardez la clé dans les identifiants n8n uniquement.
 

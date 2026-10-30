@@ -4,7 +4,7 @@
 //   RELAY_CREDENTIALS_FILE=/path/to/creds.json node scripts/live-check.mjs
 //
 // creds.json: { "apiKey": "rb_sbx_…", "environment": "auto" }  (keep it out of git)
-// Use a sandbox or test key: the script creates one delivery and cancels it.
+// Use a sandbox key: the script creates one delivery and cancels it.
 
 import { readFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
