@@ -40,8 +40,8 @@ export function isTestKey(apiKey: string): boolean {
 
 /**
  * Same rule as the credential test: sandbox keys always go to the sandbox (they work
- * nowhere else). Live and test keys both use production: the production host routes
- * test keys (rb_test_, relay_pk_test_) to the test environment on its own.
+ * nowhere else). Every other key uses production. The old test keys (rb_test_,
+ * relay_pk_test_) are retired: production answers 401 TEST_KEY_RETIRED, shown as is.
  * A custom base URL is used only when it is set and starts with https://.
  */
 export function baseUrl(credentials: RelayCredentials): string {
