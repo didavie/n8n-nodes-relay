@@ -10,7 +10,7 @@ Thank you for helping improve the Relay nodes for n8n.
 
 ## Set up
 
-Node.js 20 or later is required.
+Node.js 22 or later is required.
 
 ```bash
 git clone https://github.com/didavie/n8n-nodes-relay.git
