@@ -1,0 +1,66 @@
+{
+	"name": "n8n-nodes-relay",
+	"version": "0.1.0",
+	"description": "n8n nodes for Relay deliveries: create, track, list and cancel deliveries, get price estimates, and trigger workflows on delivery status changes.",
+	"license": "MIT",
+	"homepage": "https://github.com/didavie/n8n-nodes-relay#readme",
+	"bugs": {
+		"url": "https://github.com/didavie/n8n-nodes-relay/issues"
+	},
+	"keywords": [
+		"n8n-community-node-package",
+		"n8n",
+		"relay",
+		"delivery",
+		"logistics",
+		"shipping"
+	],
+	"author": {
+		"name": "Didavie",
+		"email": "relay@didavie.com",
+		"url": "https://didavie.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/didavie/n8n-nodes-relay.git"
+	},
+	"scripts": {
+		"build": "n8n-node build",
+		"build:watch": "tsc --watch",
+		"dev": "n8n-node dev",
+		"lint": "n8n-node lint",
+		"lint:fix": "n8n-node lint --fix",
+		"format": "prettier --write .",
+		"format:check": "prettier --check .",
+		"typecheck": "tsc --noEmit",
+		"test": "vitest run",
+		"live-check": "node scripts/live-check.mjs",
+		"prepublishOnly": "npm run build && npm run lint && npm test"
+	},
+	"files": [
+		"dist",
+		"!dist/tsconfig.tsbuildinfo"
+	],
+	"n8n": {
+		"n8nNodesApiVersion": 1,
+		"strict": true,
+		"credentials": [
+			"dist/credentials/RelayApi.credentials.js"
+		],
+		"nodes": [
+			"dist/nodes/Relay/Relay.node.js",
+			"dist/nodes/RelayTrigger/RelayTrigger.node.js"
+		]
+	},
+	"devDependencies": {
+		"@n8n/node-cli": "0.53.1",
+		"eslint": "9.32.0",
+		"n8n-workflow": "2.44.1",
+		"prettier": "3.6.2",
+		"typescript": "5.9.2",
+		"vitest": "3.2.4"
+	},
+	"peerDependencies": {
+		"n8n-workflow": "*"
+	}
+}

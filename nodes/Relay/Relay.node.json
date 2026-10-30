@@ -1,0 +1,12 @@
+{
+	"node": "n8n-nodes-relay.relay",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Miscellaneous"],
+	"resources": {
+		"credentialDocumentation": [
+			{ "url": "https://relaypartner.didavie.com/en/developers#shop-keys" }
+		],
+		"primaryDocumentation": [{ "url": "https://relaypartner.didavie.com/en/developers" }]
+	}
+}
